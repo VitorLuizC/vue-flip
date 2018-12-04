@@ -1,7 +1,7 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (factory());
+  (global.vueFlip = factory());
 }(this, (function () { 'use strict';
 
   //
@@ -77,6 +77,13 @@
           this.hover = !this.hover;
         }
       }
+    },
+    install: function install(Vue) {
+      var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
+          _ref$name = _ref.name,
+          name = _ref$name === void 0 ? 'vue-flip' : _ref$name;
+
+      Vue.component(name, Flip);
     }
   };
 
@@ -90,7 +97,7 @@
     /* style */
     const __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-44491d62_0", { source: "\n.flip-container{-webkit-perspective:1000;-moz-perspective:1000;perspective:1000\n}\n.flip-container.active-hover:hover .flipper,.flip-container.hover .flipper{-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);transform:rotateY(180deg)\n}\n.flipper{-webkit-transition:.6s;-moz-transition:.6s;-o-transition:.6s;transition:.6s;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;transform-style:preserve-3d;position:relative\n}\n.back,.front{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;position:absolute;top:0;left:0\n}\n.front{z-index:2;-webkit-transform:rotateY(0);-moz-transform:rotateY(0);transform:rotateY(0)\n}\n.back{-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);transform:rotateY(180deg)\n}", map: undefined, media: undefined });
+      inject("data-v-45c6fd18_0", { source: "\n.flip-container{-webkit-perspective:1000;-moz-perspective:1000;perspective:1000\n}\n.flip-container.active-hover:hover .flipper,.flip-container.hover .flipper{-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);transform:rotateY(180deg)\n}\n.flipper{-webkit-transition:.6s;-moz-transition:.6s;-o-transition:.6s;transition:.6s;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;transform-style:preserve-3d;position:relative\n}\n.back,.front{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;position:absolute;top:0;left:0\n}\n.front{z-index:2;-webkit-transform:rotateY(0);-moz-transform:rotateY(0);transform:rotateY(0)\n}\n.back{-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);transform:rotateY(180deg)\n}", map: undefined, media: undefined });
 
     };
     /* scoped */
@@ -218,7 +225,7 @@
     
 
     
-    var Flip = __vue_normalize__(
+    var Flip$1 = __vue_normalize__(
       { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
       __vue_inject_styles__,
       __vue_script__,
@@ -229,10 +236,6 @@
       undefined
     );
 
-  module.exports = {
-    install: function install(Vue, options) {
-      Vue.component('vue-flip', Flip);
-    }
-  };
+  return Flip$1;
 
 })));

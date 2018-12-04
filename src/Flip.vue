@@ -72,6 +72,9 @@
           this.hover = !this.hover
         }
       }
+    },
+    install (Vue, { name = 'vue-flip' } = {}) {
+      Vue.component(name, Flip)
     }
   }
 </script>
