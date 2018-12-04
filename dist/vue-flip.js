@@ -1,1 +1,238 @@
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define("vue-flip",[],t):"object"==typeof exports?exports["vue-flip"]=t():e["vue-flip"]=t()}(this,function(){return function(e){function t(r){if(n[r])return n[r].exports;var o=n[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,t),o.l=!0,o.exports}var n={};return t.m=e,t.c=n,t.d=function(e,n,r){t.o(e,n)||Object.defineProperty(e,n,{configurable:!1,enumerable:!0,get:r})},t.n=function(e){var n=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(n,"a",n),n},t.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},t.p="",t(t.s=0)}([function(e,t,n){"use strict";function r(e){a||n(1)}Object.defineProperty(t,"__esModule",{value:!0});var o=n(7),i=n.n(o),s=n(8),a=!1,u=n(6),c=r,f=u(i.a,s.a,!1,c,null,null);f.options.__file="src/Flip.vue",f.esModule&&Object.keys(f.esModule).some(function(e){return"default"!==e&&"__"!==e.substr(0,2)})&&console.error("named exports are not supported in *.vue files."),t.default=f.exports},function(e,t,n){var r=n(2);"string"==typeof r&&(r=[[e.i,r,""]]),r.locals&&(e.exports=r.locals);n(4)("4de1649e",r,!1)},function(e,t,n){t=e.exports=n(3)(void 0),t.push([e.i,"\n.flip-container {\n  perspective: 1000;\n}\n.flip-container.active-hover:hover .flipper,\n.flip-container.hover .flipper {\n  transform: rotateY(180deg);\n}\n.flipper {\n  transition: 0.6s;\n  transform-style: preserve-3d;\n  position: relative;\n}\n.front, .back {\n  backface-visibility: hidden;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.front {\n  z-index: 2;\n  -webkit-transform: rotateY(0);\n  -moz-transform: rotateY(0);\n  -o-transform: rotateY(0);\n  transform: rotateY(0);\n}\n.back {\n  -webkit-transform: rotateY(180deg);\n  -moz-transform: rotateY(180deg);\n  -o-transform: rotateY(180deg);\n  transform: rotateY(180deg);\n}\n",""])},function(e,t){function n(e,t){var n=e[1]||"",o=e[3];if(!o)return n;if(t&&"function"==typeof btoa){var i=r(o);return[n].concat(o.sources.map(function(e){return"/*# sourceURL="+o.sourceRoot+e+" */"})).concat([i]).join("\n")}return[n].join("\n")}function r(e){return"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(e))))+" */"}e.exports=function(e){var t=[];return t.toString=function(){return this.map(function(t){var r=n(t,e);return t[2]?"@media "+t[2]+"{"+r+"}":r}).join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var r={},o=0;o<this.length;o++){var i=this[o][0];"number"==typeof i&&(r[i]=!0)}for(o=0;o<e.length;o++){var s=e[o];"number"==typeof s[0]&&r[s[0]]||(n&&!s[2]?s[2]=n:n&&(s[2]="("+s[2]+") and ("+n+")"),t.push(s))}},t}},function(e,t,n){function r(e){for(var t=0;t<e.length;t++){var n=e[t],r=f[n.id];if(r){r.refs++;for(var o=0;o<r.parts.length;o++)r.parts[o](n.parts[o]);for(;o<n.parts.length;o++)r.parts.push(i(n.parts[o]));r.parts.length>n.parts.length&&(r.parts.length=n.parts.length)}else{for(var s=[],o=0;o<n.parts.length;o++)s.push(i(n.parts[o]));f[n.id]={id:n.id,refs:1,parts:s}}}}function o(){var e=document.createElement("style");return e.type="text/css",d.appendChild(e),e}function i(e){var t,n,r=document.querySelector('style[data-vue-ssr-id~="'+e.id+'"]');if(r){if(h)return v;r.parentNode.removeChild(r)}if(m){var i=p++;r=l||(l=o()),t=s.bind(null,r,i,!1),n=s.bind(null,r,i,!0)}else r=o(),t=a.bind(null,r),n=function(){r.parentNode.removeChild(r)};return t(e),function(r){if(r){if(r.css===e.css&&r.media===e.media&&r.sourceMap===e.sourceMap)return;t(e=r)}else n()}}function s(e,t,n,r){var o=n?"":r.css;if(e.styleSheet)e.styleSheet.cssText=g(t,o);else{var i=document.createTextNode(o),s=e.childNodes;s[t]&&e.removeChild(s[t]),s.length?e.insertBefore(i,s[t]):e.appendChild(i)}}function a(e,t){var n=t.css,r=t.media,o=t.sourceMap;if(r&&e.setAttribute("media",r),o&&(n+="\n/*# sourceURL="+o.sources[0]+" */",n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */"),e.styleSheet)e.styleSheet.cssText=n;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n))}}var u="undefined"!=typeof document;if("undefined"!=typeof DEBUG&&DEBUG&&!u)throw new Error("vue-style-loader cannot be used in a non-browser environment. Use { target: 'node' } in your Webpack config to indicate a server-rendering environment.");var c=n(5),f={},d=u&&(document.head||document.getElementsByTagName("head")[0]),l=null,p=0,h=!1,v=function(){},m="undefined"!=typeof navigator&&/msie [6-9]\b/.test(navigator.userAgent.toLowerCase());e.exports=function(e,t,n){h=n;var o=c(e,t);return r(o),function(t){for(var n=[],i=0;i<o.length;i++){var s=o[i],a=f[s.id];a.refs--,n.push(a)}t?(o=c(e,t),r(o)):o=[];for(var i=0;i<n.length;i++){var a=n[i];if(0===a.refs){for(var u=0;u<a.parts.length;u++)a.parts[u]();delete f[a.id]}}}};var g=function(){var e=[];return function(t,n){return e[t]=n,e.filter(Boolean).join("\n")}}()},function(e,t){e.exports=function(e,t){for(var n=[],r={},o=0;o<t.length;o++){var i=t[o],s=i[0],a=i[1],u=i[2],c=i[3],f={id:e+":"+o,css:a,media:u,sourceMap:c};r[s]?r[s].parts.push(f):n.push(r[s]={id:s,parts:[f]})}return n}},function(e,t){e.exports=function(e,t,n,r,o,i){var s,a=e=e||{},u=typeof e.default;"object"!==u&&"function"!==u||(s=e,a=e.default);var c="function"==typeof a?a.options:a;t&&(c.render=t.render,c.staticRenderFns=t.staticRenderFns,c._compiled=!0),n&&(c.functional=!0),o&&(c._scopeId=o);var f;if(i?(f=function(e){e=e||this.$vnode&&this.$vnode.ssrContext||this.parent&&this.parent.$vnode&&this.parent.$vnode.ssrContext,e||"undefined"==typeof __VUE_SSR_CONTEXT__||(e=__VUE_SSR_CONTEXT__),r&&r.call(this,e),e&&e._registeredComponents&&e._registeredComponents.add(i)},c._ssrRegister=f):r&&(f=r),f){var d=c.functional,l=d?c.render:c.beforeCreate;d?(c._injectStyles=f,c.render=function(e,t){return f.call(t),l(e,t)}):c.beforeCreate=l?[].concat(l,f):[f]}return{esModule:s,exports:a,options:c}}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default={name:"flip",props:{activeClick:{type:Boolean,required:!1,default:!1},activeHover:{type:Boolean,required:!1,default:!1},width:{type:String,required:!0},height:String,transition:{type:String,required:!1,default:"0.5s"}},data:function(){return{hover:!1}},computed:{cardStyle:function(){var e={};return this.height&&(e.height=this.height.includes("%")?"100%":this.height),this.width&&(e.width=this.width.includes("%")?"100%":this.width),this.transition&&(e.transition=this.transition),e}},methods:{handlerHover:function(){this.activeClick&&(this.hover=!this.hover)}}}},function(e,t,n){"use strict";var r=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",{staticClass:"flip-container",class:{"active-hover":e.activeHover,hover:e.hover},style:{width:e.width,height:e.height},on:{click:e.handlerHover}},[n("div",{staticClass:"flipper",style:e.cardStyle},[n("div",{staticClass:"front",style:e.cardStyle},[e._t("front")],2),e._v(" "),n("div",{staticClass:"back",style:e.cardStyle},[e._t("back")],2)])])},o=[];r._withStripped=!0;var i={render:r,staticRenderFns:o};t.a=i}])});
+(function (global, factory) {
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (factory());
+}(this, (function () { 'use strict';
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  var script = {
+    name: 'flip',
+    props: {
+      'activeClick': {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      'activeHover': {
+        type: Boolean,
+        required: false,
+        default: false
+      },
+      'width': {
+        type: String,
+        required: true
+      },
+      'height': String,
+      'transition': {
+        type: String,
+        required: false,
+        default: '0.5s'
+      }
+    },
+    data: function data() {
+      return {
+        hover: false
+      };
+    },
+    computed: {
+      cardStyle: function cardStyle() {
+        var result = {};
+
+        if (this.height) {
+          result.height = this.height.includes('%') ? '100%' : this.height;
+        }
+
+        if (this.width) {
+          result.width = this.width.includes('%') ? '100%' : this.width;
+        }
+
+        if (this.transition) {
+          result.transition = this.transition;
+        }
+
+        return result;
+      }
+    },
+    methods: {
+      handlerHover: function handlerHover() {
+        if (this.activeClick) {
+          this.hover = !this.hover;
+        }
+      }
+    }
+  };
+
+  /* script */
+              const __vue_script__ = script;
+              
+  /* template */
+  var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"flip-container",class:{ 'active-hover': _vm.activeHover, 'hover': _vm.hover },style:({ width: _vm.width, height: _vm.height }),on:{"click":_vm.handlerHover}},[_c('div',{staticClass:"flipper",style:(_vm.cardStyle)},[_c('div',{staticClass:"front",style:(_vm.cardStyle)},[_vm._t("front")],2),_vm._v(" "),_c('div',{staticClass:"back",style:(_vm.cardStyle)},[_vm._t("back")],2)])])};
+  var __vue_staticRenderFns__ = [];
+
+    /* style */
+    const __vue_inject_styles__ = function (inject) {
+      if (!inject) return
+      inject("data-v-44491d62_0", { source: "\n.flip-container{-webkit-perspective:1000;-moz-perspective:1000;perspective:1000\n}\n.flip-container.active-hover:hover .flipper,.flip-container.hover .flipper{-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);transform:rotateY(180deg)\n}\n.flipper{-webkit-transition:.6s;-moz-transition:.6s;-o-transition:.6s;transition:.6s;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;transform-style:preserve-3d;position:relative\n}\n.back,.front{-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;position:absolute;top:0;left:0\n}\n.front{z-index:2;-webkit-transform:rotateY(0);-moz-transform:rotateY(0);transform:rotateY(0)\n}\n.back{-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);transform:rotateY(180deg)\n}", map: undefined, media: undefined });
+
+    };
+    /* scoped */
+    const __vue_scope_id__ = undefined;
+    /* module identifier */
+    const __vue_module_identifier__ = undefined;
+    /* functional template */
+    const __vue_is_functional_template__ = false;
+    /* component normalizer */
+    function __vue_normalize__(
+      template, style, script$$1,
+      scope, functional, moduleIdentifier,
+      createInjector, createInjectorSSR
+    ) {
+      const component = (typeof script$$1 === 'function' ? script$$1.options : script$$1) || {};
+
+      // For security concerns, we use only base name in production mode.
+      component.__file = "Flip.vue";
+
+      if (!component.render) {
+        component.render = template.render;
+        component.staticRenderFns = template.staticRenderFns;
+        component._compiled = true;
+
+        if (functional) component.functional = true;
+      }
+
+      component._scopeId = scope;
+
+      {
+        let hook;
+        if (style) {
+          hook = function(context) {
+            style.call(this, createInjector(context));
+          };
+        }
+
+        if (hook !== undefined) {
+          if (component.functional) {
+            // register for functional component in vue file
+            const originalRender = component.render;
+            component.render = function renderWithStyleInjection(h, context) {
+              hook.call(context);
+              return originalRender(h, context)
+            };
+          } else {
+            // inject component registration as beforeCreate hook
+            const existing = component.beforeCreate;
+            component.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+          }
+        }
+      }
+
+      return component
+    }
+    /* style inject */
+    function __vue_create_injector__() {
+      const head = document.head || document.getElementsByTagName('head')[0];
+      const styles = __vue_create_injector__.styles || (__vue_create_injector__.styles = {});
+      const isOldIE =
+        typeof navigator !== 'undefined' &&
+        /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
+
+      return function addStyle(id, css) {
+        if (document.querySelector('style[data-vue-ssr-id~="' + id + '"]')) return // SSR styles are present.
+
+        const group = isOldIE ? css.media || 'default' : id;
+        const style = styles[group] || (styles[group] = { ids: [], parts: [], element: undefined });
+
+        if (!style.ids.includes(id)) {
+          let code = css.source;
+          let index = style.ids.length;
+
+          style.ids.push(id);
+
+          if (css.map) {
+            // https://developer.chrome.com/devtools/docs/javascript-debugging
+            // this makes source maps inside style tags work properly in Chrome
+            code += '\n/*# sourceURL=' + css.map.sources[0] + ' */';
+            // http://stackoverflow.com/a/26603875
+            code +=
+              '\n/*# sourceMappingURL=data:application/json;base64,' +
+              btoa(unescape(encodeURIComponent(JSON.stringify(css.map)))) +
+              ' */';
+          }
+
+          if (isOldIE) {
+            style.element = style.element || document.querySelector('style[data-group=' + group + ']');
+          }
+
+          if (!style.element) {
+            const el = style.element = document.createElement('style');
+            el.type = 'text/css';
+
+            if (css.media) el.setAttribute('media', css.media);
+            if (isOldIE) {
+              el.setAttribute('data-group', group);
+              el.setAttribute('data-next-index', '0');
+            }
+
+            head.appendChild(el);
+          }
+
+          if (isOldIE) {
+            index = parseInt(style.element.getAttribute('data-next-index'));
+            style.element.setAttribute('data-next-index', index + 1);
+          }
+
+          if (style.element.styleSheet) {
+            style.parts.push(code);
+            style.element.styleSheet.cssText = style.parts
+              .filter(Boolean)
+              .join('\n');
+          } else {
+            const textNode = document.createTextNode(code);
+            const nodes = style.element.childNodes;
+            if (nodes[index]) style.element.removeChild(nodes[index]);
+            if (nodes.length) style.element.insertBefore(textNode, nodes[index]);
+            else style.element.appendChild(textNode);
+          }
+        }
+      }
+    }
+    /* style inject SSR */
+    
+
+    
+    var Flip = __vue_normalize__(
+      { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
+      __vue_inject_styles__,
+      __vue_script__,
+      __vue_scope_id__,
+      __vue_is_functional_template__,
+      __vue_module_identifier__,
+      __vue_create_injector__,
+      undefined
+    );
+
+  module.exports = {
+    install: function install(Vue, options) {
+      Vue.component('vue-flip', Flip);
+    }
+  };
+
+})));
