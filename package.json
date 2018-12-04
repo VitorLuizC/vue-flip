@@ -9,7 +9,7 @@
   "jsdelivr": "dist/vue-flip.js",
   "umd:main": "dist/vue-flip.js",
   "scripts": {
-    "build": "bili src/Flip.vue --format es,cjs,umd,umd-min --plugin vue --vue.css"
+    "build": "bili src/Flip.vue --format es,cjs,umd,umd-min --plugin vue --vue.css --moduleName VueFlip"
   },
   "author": "Kevin Grandemange",
   "license": "MIT",
